@@ -1,57 +1,42 @@
 import java.util.Scanner;
 
 public class Adventure {
+	private static Object Item;
+
 	public static void main(String[] args) {
+		Map map = new Map();
+		map.createMap();
 
-
-		Rooms room1 = new Rooms("little cave", "a lot of water");
-		Rooms room2 = new Rooms("big dark cave", "dark and smelly");
-		Rooms room3 = new Rooms("big ligth cave", "a big cave with a lot of ligth");
-		Rooms room4 = new Rooms("little gold cave", "with a staircase");
-		Rooms room5 = new Rooms("dark upper room", " a dark with no windows");
-		Rooms room6 = new Rooms("ligth upper room", " with windows, sunshine and a staircase");
-		Rooms room7 = new Rooms("purple cave", "staircase going down to purple cave and it gets dark");
-		Rooms room8 = new Rooms("red room", "a big red room with a fire pit");
-		Rooms room9 = new Rooms("green room", "green room with a tree");
-
-		room1.setEast(room2);
-		room3.setWest(room2);
-		room3.setSouth(room6);
-		room4.setNorth(room1);
-		room5.setSouth(room8);
-		room6.setNorth(room3);
-		room7.setEast(room8);
-		room8.setEast(room9);
-		room9.setNorth(room6);
-		room4.setSouth(room7);
-		Rooms currenRoom = room1;
+		Player player = new Player();
+		player.setCurrentRoom(map.getStarterRoom());
 
 		Scanner sc = new Scanner(System.in);
 		System.out.println("hej welcome");
-		System.out.println("to navigate type: north, south, east, west");
+		System.out.println("to navigate type: n or north, s or south, e or east, w or west you can also type look to get help");
 
 		while (true) {
 			String input = sc.nextLine();
-			Rooms requestedRoom = null;
-			if (input.equalsIgnoreCase("south") || (input.equalsIgnoreCase("go south"))) {
-					requestedRoom = currenRoom.getSouth();
-			} else if (input.equalsIgnoreCase("north") || (input.equalsIgnoreCase("go north"))) {
-					requestedRoom = currenRoom.getNorth();
-			} else if (input.equalsIgnoreCase("west") || (input.equalsIgnoreCase("go west"))) {
-					requestedRoom = currenRoom.getWest();
-			} else	if (input.equalsIgnoreCase("east") || (input.equalsIgnoreCase("go east"))) {
-				requestedRoom = currenRoom.getEast();
+			boolean playerMoved = false;
+			if (input.equalsIgnoreCase("south") || (input.equalsIgnoreCase("s"))) {
+				playerMoved = player.move("south");
+			} else if (input.equalsIgnoreCase("north") || (input.equalsIgnoreCase("n"))) {
+				playerMoved = player.move("north");
+			} else if (input.equalsIgnoreCase("west") || (input.equalsIgnoreCase("w"))) {
+				playerMoved = player.move("west");
+			} else	if (input.equalsIgnoreCase("east") || (input.equalsIgnoreCase("e"))) {
+				playerMoved = player.move("east");
 			}
 
-			if (requestedRoom != null) {
-				currenRoom = requestedRoom;
-			//	System.out.println("going west");
-				System.out.println("you are now in " + currenRoom);
+			if (playerMoved) {
+				System.out.println("going west");
+				System.out.println("you are now in " + player.getCurrentRoom());
+				// Udskriv også listen af items i rummet
+
 			} else {
 				System.out.println("Wrong way");
 			}
 
-			if (currenRoom == room5) {
+			if (player.getCurrentRoom() == map.getWinnerRoom()) {
 				System.out.println("you won");
 				System.exit(1);
 			}
@@ -60,7 +45,7 @@ public class Adventure {
 				System.out.println(1);
 			}
 			if(input.equalsIgnoreCase("look")){
-				System.out.println("fat noget");
+				System.out.println("sorry i cant help you at this moment... GET IT!!");
 			}
 			if(input.equalsIgnoreCase("help")){
 				System.out.println("exit,\nNorth\nsouth\neast\nwest\nlook");

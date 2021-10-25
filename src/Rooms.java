@@ -14,14 +14,6 @@ public class Rooms {
 		this.description = aDescription;
 	}
 
-	public String getDescription(){
-	return  description;
-	}
-
-	public  String getName(){
-	return name;
-	}
-
 	public void setDescription (String aDescription){
 	this.description = aDescription;
 	}
