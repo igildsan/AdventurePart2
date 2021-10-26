@@ -2,12 +2,12 @@
 public class Item {
 	private String itemName;
 	private String description;
-
-	public Item(String itemName, String description) {
-		this.itemName = itemName;
-		this.description = description;
+	//constructor
+	public Item(String aItemName, String aDescription) {
+		this.itemName = aItemName;
+		this.description = aDescription;
 	}
-
+	// setters and getters
 	public Item(String itemName) {
 		this.itemName = itemName;
 	}

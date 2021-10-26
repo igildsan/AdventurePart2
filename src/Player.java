@@ -8,19 +8,28 @@ public class Player {
 	//item.add("staff");
 
 	public Player() {
-
+	}
+	public boolean takeItem(String itemName){
+		Item item = currentRoom.findItem(itemName);
+		inventory.add(item);
+		currentRoom.getRoomInventory().remove(item);
+		return true;
 	}
 
-	public Rooms getCurrentRoom() {
+	public Room getCurrentRoom() {
 		return currentRoom;
 	}
 
-	public void setCurrentRoom(Rooms currentRoom) {
+	public ArrayList<Item> getInventory() {
+		return inventory;
+	}
+
+	public void setCurrentRoom(Room currentRoom) {
 		this.currentRoom = currentRoom;
 	}
 
 	public boolean move(String direction) {
-		Rooms requestedRoom = null;
+		Room requestedRoom = null;
 		if (direction.equalsIgnoreCase("north")) {
 			requestedRoom = currentRoom.getNorth();
 		} else if (direction.equalsIgnoreCase("south")) {
@@ -33,7 +42,9 @@ public class Player {
 		if (requestedRoom != null) {
 			currentRoom = requestedRoom;
 			return true;
+
 		} else {
+			System.out.println("Wrong way");
 			return false;
 		}
 	}

@@ -1,19 +1,29 @@
 public class Map {
 
-	private Rooms starterRoom;
-	private Rooms winnerRoom;
+	private
+	Room starterRoom;
+	private Room winnerRoom;
 
 	public void createMap() {
-		Rooms room1 = new Rooms("little cave", "a lot of water");
 
-		Rooms room2 = new Rooms("big dark cave", "dark and smelly");
-		Rooms room3 = new Rooms("big ligth cave", "a big cave with a lot of ligth");
-		Rooms room4 = new Rooms("little gold cave", "with a staircase");
-		Rooms room5 = new Rooms("Golden Room!!!", " a golden room full of treasure and you can see a exit out of the maze");
-		Rooms room6 = new Rooms("ligth upper room", " with windows, sunshine and a staircase leading down");
-		Rooms room7 = new Rooms("purple cave", "staircase going down to purple cave and it gets dark");
-		Rooms room8 = new Rooms("red room", "a big red room with a fire pit");
-		Rooms room9 = new Rooms("green room", "green room with a tree");
+		Room room1 = new Room("in a plane.","You are about to jump out of the plane.");
+		Room room2 = new Room("falling.","You are currently falling with 200 mph, your childhood memories are replaying before your eyes. ");
+		Room room3 = new Room("dead.","You smashed a massive hole in the ground, you are dead.");
+		Room room4 = new Room("falling.","You are falling with 200mph, you are about to pull your parachute. ");
+		Room room5 = new Room("in a 7-eleven.","You bought a 6-pack of beers and a pack of cigarettes. Today has been a good day.");
+		Room room6 = new Room("hit by a magical light.","....You have resin from the dead.");
+		Room room7 = new Room("at Strøget.","You are flying safely above Copenhagen, and landing at the nice landing strip Strøget. ");
+		Room room8 = new Room("walking down the street.","People are yelling at you, but you dont care." );
+		Room room9 = new Room("at Storke springvandet.","Your washing the blood of your clothes, unfortunately you hit a family on the way down. ");
+
+		Item lamp = new Item("lamp", "shkhh");
+		Item sword = new Item("sword", "sword");
+		Item spear = new Item("spear", "spear");
+
+		room1.addItem(lamp);
+		room2.addItem(sword);
+		room4.addItem(spear);
+
 
 		room1.setEast(room2);
 		room3.setWest(room2);
@@ -31,11 +41,11 @@ public class Map {
 		winnerRoom = room5;
 	}
 
-	public Rooms getStarterRoom() {
+	public Room getStarterRoom() {
 		return starterRoom;
 	}
 
-	public Rooms getWinnerRoom() {
+	public Room getWinnerRoom() {
 		return winnerRoom;
 	}
 }
