@@ -7,6 +7,9 @@ public class Player {
 	//item.add("sword");
 	//item.add("staff");
 
+	public ArrayList<Item> getInventory() {
+		return inventory;
+	}
 	public Player() {
 	}
 	public boolean takeItem(String itemName){
@@ -18,10 +21,6 @@ public class Player {
 
 	public Room getCurrentRoom() {
 		return currentRoom;
-	}
-
-	public ArrayList<Item> getInventory() {
-		return inventory;
 	}
 
 	public void setCurrentRoom(Room currentRoom) {

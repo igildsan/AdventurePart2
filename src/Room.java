@@ -14,6 +14,9 @@ public class Room {
 	public void addItem (Item item){
 		roomInventory.add(item);
 	}
+	public ArrayList<Item> getRoomInventory() {
+		return roomInventory;
+	}
 	public Item findItem(String itemName) {
 		for (int i = 0; i < roomInventory.size(); i++) {
 			if (roomInventory.get(i).getItemName().equals(itemName)) {
@@ -22,12 +25,6 @@ public class Room {
 		}
 		return null;
 	}
-
-
-	public ArrayList<Item> getRoomInventory() {
-		return roomInventory;
-	}
-
 	//constructor "Rooms" der kan kaldes fra min main metode
 	public Room(String aName, String aDescription) {
 		this.name = aName;
@@ -41,11 +38,15 @@ public class Room {
 	public void setName(String aName) {
 		this.name = aName;
 	}
-	public void printList(){
+	public void roomInventoryList(){
 		for (int i = 0; i< roomInventory.size(); i++){
 			System.out.println(roomInventory.get(i).getItemName());
 		}
-	}
+	}/*
+	public void playerInventoryList(){	//I gang
+		for (int i = 0; i< playerInventory.size(); i++){
+			System.out.println(playerInventory.get(i).getItemName());
+	}*/
 
 	public Room getNorth() {
 		return north;

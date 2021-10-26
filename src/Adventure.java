@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Adventure {
-	private static Object Item;
+	//private static Object Item;      bliver ikke brugt?
 
 	public static void main(String[] args) {
 		Map map = new Map();
@@ -40,7 +40,7 @@ public class Adventure {
 				System.out.println("You are now " + player.getCurrentRoom());
 				
 				if (player.getCurrentRoom() == map.getWinnerRoom()) {
-					System.out.println("You Won!\nTry another path");
+					System.out.println("You Won!");
 					System.exit(1);
 				}
 				else if (input.equalsIgnoreCase("exit")) {
@@ -49,7 +49,7 @@ public class Adventure {
 				}
 				else if (input.equalsIgnoreCase("look")) {
 					System.out.println(player.getCurrentRoom());
-					player.getCurrentRoom().printList();
+					player.getCurrentRoom().roomInventoryList();
 				}
 				else if (input.equalsIgnoreCase("help")) {
 					System.out.println("THIS IS YOUR COMMANDS:\nExit - Lets your exit the game\nLook - Repeats room description \nNorth - Moves north\nSouth - Moves south\nEast - Moves east\nWest - Moves west");
@@ -61,7 +61,7 @@ public class Adventure {
 					}
 				}
 				else if (input.equalsIgnoreCase("take")) {
-					player.getCurrentRoom().printList();
+					player.getCurrentRoom().roomInventoryList();
 					System.out.println("What item do you want to pick up?");
 					Scanner scan = new Scanner(System.in);
 					String itemName = scan.nextLine();
@@ -72,19 +72,17 @@ public class Adventure {
 						}
 					}
 				}
-				///bagvend herfra
 				/*else if (input.equalsIgnoreCase("drop")) {
 					player.getInventory().printList();
 					System.out.println("What item do you want to drop?");
-					Scanner inputDrop = new Scanner(System.in);
-					String itemName = inDrop.nextLine();
+					String itemdrop = scan.nextLine();
 					if (player.takeItem(itemName)) {
 						System.out.println("item taken");
 						for (int i = 0; i < player.getInventory().size(); i++) {
 							System.out.println(player.getInventory().get(i).getItemName());
 						}
 					}
-				}*/
+				} */
 			}
 		}
 	}
