@@ -6,9 +6,6 @@ public class Map {
 	public void createMap() {
 		Rooms room1 = new Rooms("little cave", "a lot of water");
 
-		Item flashlight = new Item("Flashlight", "A shiny new flashlight");
-		//room1.addItem(flashlight);
-
 		Rooms room2 = new Rooms("big dark cave", "dark and smelly");
 		Rooms room3 = new Rooms("big ligth cave", "a big cave with a lot of ligth");
 		Rooms room4 = new Rooms("little gold cave", "with a staircase");

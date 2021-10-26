@@ -23,7 +23,7 @@ public class Adventure {
 				playerMoved = player.move("north");
 			} else if (input.equalsIgnoreCase("west") || (input.equalsIgnoreCase("w"))) {
 				playerMoved = player.move("west");
-			} else	if (input.equalsIgnoreCase("east") || (input.equalsIgnoreCase("e"))) {
+			} else if (input.equalsIgnoreCase("east") || (input.equalsIgnoreCase("e"))) {
 				playerMoved = player.move("east");
 			}
 
@@ -40,24 +40,25 @@ public class Adventure {
 				System.out.println("you won");
 				System.exit(1);
 			}
-			if(input.equalsIgnoreCase("exit")){
+			if (input.equalsIgnoreCase("exit")) {
 				System.out.println("winners never quit and quitters never win");
 				System.out.println(1);
 			}
-			if(input.equalsIgnoreCase("look")){
+			if (input.equalsIgnoreCase("look")) {
 				System.out.println("sorry i cant help you at this moment... GET IT!!");
 			}
-			if(input.equalsIgnoreCase("help")){
+			if (input.equalsIgnoreCase("help")) {
 				System.out.println("exit,\nNorth\nsouth\neast\nwest\nlook");
+
+				if (input.equalsIgnoreCase("look")) {
+					System.out.println("sorry i cant help you at this moment... GET IT!!");
+				}
+			}
+			if (input.equalsIgnoreCase("inventory")) {
+				System.out.println();
 			}
 		}
 	}
-	}
-
-
-
-
-
-
+}
 
 

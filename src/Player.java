@@ -1,9 +1,12 @@
 import java.util.ArrayList;
 public class Player {
 
- 	private Rooms currentRoom;
+	private Rooms currentRoom;
+	private ArrayList<Item> item = new ArrayList<>();
+	item.add("sword");
+	item.add("staff")
 
- 	public Player() {
+	public Player() {
 
 	}
 	public Rooms getCurrentRoom() {
