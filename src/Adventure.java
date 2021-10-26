@@ -71,13 +71,14 @@ public class Adventure {
 							System.out.println(player.getInventory().get(i).getItemName());
 						}
 					}
-				}
-				/*else if (input.equalsIgnoreCase("drop")) {
-					player.getInventory().printList();
+				}/*
+				else if (input.equalsIgnoreCase("drop")) {
+					player.playerinventoryList();
 					System.out.println("What item do you want to drop?");
-					String itemdrop = scan.nextLine();
-					if (player.takeItem(itemName)) {
-						System.out.println("item taken");
+					Scanner scanner = new Scanner(System.in);
+					String itemdrop = scanner.nextLine();
+					if (player.dropItem(itemdrop)) {
+						System.out.println("item dropped");
 						for (int i = 0; i < player.getInventory().size(); i++) {
 							System.out.println(player.getInventory().get(i).getItemName());
 						}

@@ -11,6 +11,7 @@ public class Room {
 	private String description;
 
 	private ArrayList<Item> roomInventory = new ArrayList<>();
+
 	public void addItem (Item item){
 		roomInventory.add(item);
 	}
@@ -42,11 +43,7 @@ public class Room {
 		for (int i = 0; i< roomInventory.size(); i++){
 			System.out.println(roomInventory.get(i).getItemName());
 		}
-	}/*
-	public void playerInventoryList(){	//I gang
-		for (int i = 0; i< playerInventory.size(); i++){
-			System.out.println(playerInventory.get(i).getItemName());
-	}*/
+	}
 
 	public Room getNorth() {
 		return north;

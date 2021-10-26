@@ -16,9 +16,9 @@ public class Map {
 		Room room8 = new Room("walking down the street.","People are yelling at you, but you dont care." );
 		Room room9 = new Room("at Storke springvandet.","Your washing the blood of your clothes, unfortunately you hit a family on the way down. ");
 
-		Item lamp = new Item("lamp", "shkhh");
-		Item sword = new Item("sword", "sword");
-		Item spear = new Item("spear", "spear");
+		Item lamp = new Item("lamp", "magical and bright");
+		Item sword = new Item("sword", "really big sharp knife");
+		Item spear = new Item("spear", "spear, very pointy");
 
 		room1.addItem(lamp);
 		room2.addItem(sword);
