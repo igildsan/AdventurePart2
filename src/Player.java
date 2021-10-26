@@ -4,8 +4,8 @@ public class Player {
 
 	private Rooms currentRoom;
 	private ArrayList<Item> item = new ArrayList<>();
-	item.add("sword");
-	item.add("staff");
+	//item.add("sword");
+	//item.add("staff");
 
 	public Player() {
 
