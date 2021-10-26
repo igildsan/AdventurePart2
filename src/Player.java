@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Player {
 
 	private Rooms currentRoom;
-	private ArrayList<Item> item = new ArrayList<>();
+	private ArrayList<Item> item = new ArrayList<>(5);
 	item.add("sword");
 	item.add("staff");
 
