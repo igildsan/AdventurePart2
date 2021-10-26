@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+
 public class Item {
-	private String name;
+	private String itemName;
 	private String description;
 
 	public Item(String itemName, String description) {

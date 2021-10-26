@@ -26,6 +26,7 @@ public class Map {
 		room9.setNorth(room6);
 		room4.setSouth(room7);
 
+
 		starterRoom = room1;
 		winnerRoom = room5;
 	}

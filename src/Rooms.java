@@ -16,44 +16,51 @@ public class Rooms {
 		this.description = aDescription;
 	}
 
-	public void setDescription (String aDescription){
-	this.description = aDescription;
+	public void setDescription(String aDescription) {
+		this.description = aDescription;
 	}
 
-	public void setName(String aName){
-	this.name = aName;
+	public void setName(String aName) {
+		this.name = aName;
 	}
 
-	public Rooms getNorth(){
-	return north;
+	public Rooms getNorth() {
+		return north;
 	}
-	public Rooms getSouth(){
-	return south;
+
+	public Rooms getSouth() {
+		return south;
 	}
-	public Rooms getEast(){
-	return east;
+
+	public Rooms getEast() {
+		return east;
 	}
-	public Rooms getWest(){
-	return west;
+
+	public Rooms getWest() {
+		return west;
 	}
-	public void setNorth(Rooms north){
+
+	public void setNorth(Rooms north) {
 		this.north = north;
 		this.north.south = (this);
 	}
-	public void setSouth(Rooms south){
+
+	public void setSouth(Rooms south) {
 		this.south = south;
 		this.south.north = (this);
 	}
-	public void setEast(Rooms east){
+
+	public void setEast(Rooms east) {
 		this.east = east;
 		this.east.west = (this);
 	}
-	public void setWest(Rooms west){
+
+	public void setWest(Rooms west) {
 		this.west = west;
 		this.west.east = (this);
 	}
 
-	public String toString(){
+	public String toString() {
 		return name + " " + description;
 	}
 
