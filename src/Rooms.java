@@ -9,7 +9,6 @@ public class Rooms {
 
 	private String name;
 	private String description;
-	private ArrayList<>
 	//constructor "Rooms" der kan kaldes fra min main metode
 	public Rooms(String aName, String aDescription) {
 		this.name = aName;
