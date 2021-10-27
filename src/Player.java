@@ -10,11 +10,11 @@ public class Player {
 	public ArrayList<Item> getInventory() {
 		return inventory;
 	}
-	/*public void playerinventoryList(){ // i gang
+	public void playerinventoryList(){ // i gang
 		for (int i = 0; i< inventory.size(); i++){
 			System.out.println(inventory.get(i).getItemName());
 		}
-	}*/
+	}
 
 	public Player() {
 	}
@@ -24,11 +24,19 @@ public class Player {
 		currentRoom.getRoomInventory().remove(item);
 		return true;
 	}
-	/*public boolean dropItem(String itemName) { // igang
-		Item item = inventory.findItem(itemName);
+	public Item findIventoryItem(String itemName) {
+		for (int i = 0; i < inventory.size(); i++) {
+			if (inventory.get(i).getItemName().equals(itemName)) {
+				return inventory.get(i);
+			}
+		}
+		return null;
+	}
+	public boolean dropItem(String itemName) { // igang
+		Item item = findIventoryItem(itemName);
 		inventory.remove(item);
 		return true;
-	}*/
+	}
 	public Room getCurrentRoom() {
 		return currentRoom;
 	}

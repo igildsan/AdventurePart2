@@ -37,8 +37,8 @@ public class Adventure {
 			}
 
 			if (playerMoved) {
-				System.out.println("You are now " + player.getCurrentRoom());
-				
+                System.out.println("You are now " + player.getCurrentRoom());
+
 				if (player.getCurrentRoom() == map.getWinnerRoom()) {
 					System.out.println("You Won!");
 					System.exit(1);
@@ -48,7 +48,6 @@ public class Adventure {
 					System.exit(1);
 				}
 				else if (input.equalsIgnoreCase("look")) {
-					System.out.println(player.getCurrentRoom());
 					player.getCurrentRoom().roomInventoryList();
 				}
 				else if (input.equalsIgnoreCase("help")) {
@@ -71,7 +70,7 @@ public class Adventure {
 							System.out.println(player.getInventory().get(i).getItemName());
 						}
 					}
-				}/*
+				} // virker ikke
 				else if (input.equalsIgnoreCase("drop")) {
 					player.playerinventoryList();
 					System.out.println("What item do you want to drop?");
@@ -83,7 +82,7 @@ public class Adventure {
 							System.out.println(player.getInventory().get(i).getItemName());
 						}
 					}
-				} */
+				}
 			}
 		}
 	}
