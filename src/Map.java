@@ -1,7 +1,7 @@
 public class Map {
 
 	private
-	Room starterRoom;
+	static Room starterRoom;
 	private Room winnerRoom;
 
 	public void createMap() {
@@ -23,7 +23,6 @@ public class Map {
 		room1.addItem(lamp);
 		room2.addItem(sword);
 		room4.addItem(spear);
-
 
 		room1.setEast(room2);
 		room3.setWest(room2);

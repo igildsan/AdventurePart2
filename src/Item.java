@@ -7,7 +7,6 @@ public class Item {
 		this.itemName = aItemName;
 		this.description = aDescription;
 	}
-	// setters and getters
 	public Item(String itemName) {
 		this.itemName = itemName;
 	}

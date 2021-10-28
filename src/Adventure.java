@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Adventure {
-	//private static Object Item;      bliver ikke brugt?
 
 	public static void main(String[] args) {
 		Map map = new Map();

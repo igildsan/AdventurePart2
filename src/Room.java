@@ -26,6 +26,11 @@ public class Room {
 		}
 		return null;
 	}
+	public void roomInventoryList(){
+		for (int i = 0; i< roomInventory.size(); i++){
+			System.out.println(roomInventory.get(i).getItemName());
+		}
+	}
 	//constructor "Rooms" der kan kaldes fra min main metode
 	public Room(String aName, String aDescription) {
 		this.name = aName;
@@ -39,24 +44,16 @@ public class Room {
 	public void setName(String aName) {
 		this.name = aName;
 	}
-	public void roomInventoryList(){
-		for (int i = 0; i< roomInventory.size(); i++){
-			System.out.println(roomInventory.get(i).getItemName());
-		}
-	}
 
 	public Room getNorth() {
 		return north;
 	}
-
 	public Room getSouth() {
 		return south;
 	}
-
 	public Room getEast() {
 		return east;
 	}
-
 	public Room getWest() {
 		return west;
 	}
