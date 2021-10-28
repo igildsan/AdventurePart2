@@ -44,6 +44,7 @@ public class Player {
 	public boolean dropItem(String itemName) { //Kigger i player inventory og fjerner item derfra.
 		Item item = findIventoryItem(itemName);
 		inventory.remove(item);
+		currentRoom.getRoomInventory().add(item);
 		return true;
 	}
 

@@ -19,7 +19,7 @@ public class Map {
 		Item lamp = new Item("lamp", "magical and bright");
 		Item sword = new Item("sword", "really big sharp knife");
 		Item spear = new Item("spear", "spear, very pointy");
-		Item bigmac = new Item("bigmac","Blesses by ronald mc donald",50);
+		Item bigmac = new Item("bigmac","blesses by ronald mc.donald",50);
 
 		room1.addItem(lamp);
 		room2.addItem(sword);
