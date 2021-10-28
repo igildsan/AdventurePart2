@@ -30,6 +30,7 @@ public class Room {
 		for (int i = 0; i< roomInventory.size(); i++){
 			System.out.println(roomInventory.get(i).getItemName());
 		}
+
 	}
 	//constructor "Rooms" der kan kaldes fra min main metode
 	public Room(String aName, String aDescription) {

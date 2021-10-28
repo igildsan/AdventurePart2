@@ -13,7 +13,9 @@ public class Item {
 		this.description = aDescription;
 		this.health = aHealth;
 	}
+
 	public String getItemName() {
+
 		return itemName;
 	}
 	public int getHealth() {

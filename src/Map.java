@@ -1,7 +1,6 @@
 public class Map {
 
-	private
-	static Room starterRoom;
+	private Room starterRoom;
 	private Room winnerRoom;
 
 	public void createMap() {
