@@ -2,9 +2,14 @@ import java.util.ArrayList;
 
 public class Player {
 
+	private int playerHealth = 10; // instantiere spillers health points
+
+	public int getPlayerHealth() {
+		return playerHealth;
+	}
 
 	private Room currentRoom;
-	private ArrayList<Item> inventory = new ArrayList<>(); //instiansere array
+	private ArrayList<Item> inventory = new ArrayList<>(); //instantiere array
 
 	public ArrayList<Item> getInventory() { //player inventory
 		return inventory;
