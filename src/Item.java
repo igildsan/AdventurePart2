@@ -3,6 +3,7 @@ public class Item {
 	private String itemName;
 	private String description;
 	private int health;
+	private int attack;
 
 	public Item(String aItemName, String aDescription) { // item constructor
 		this.itemName = aItemName;
@@ -12,6 +13,12 @@ public class Item {
 		this.itemName = aItemName;
 		this.description = aDescription;
 		this.health = aHealth;
+	}
+	public Item(String aItemName, String aDescription,int aHealth, int anAttack) { //overloading item constructor med attack, en ekstra vaibel
+		this.itemName = aItemName;
+		this.description = aDescription;
+		this.health = aHealth;
+		this.attack = anAttack;
 	}
 
 	public String getItemName() {

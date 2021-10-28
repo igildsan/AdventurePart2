@@ -16,14 +16,19 @@ public class Map {
 		Room room9 = new Room("at Storke springvandet.","Your washing the blood of your clothes, unfortunately you hit a family on the way down. ");
 
 		Item lamp = new Item("lamp", "magical and bright");
-		Item sword = new Item("sword", "really big sharp knife");
-		Item spear = new Item("spear", "spear, very pointy");
+		Item segway = new Item("segway", "pretty fast, vroom vroom");
+		Item sword = new Item("sword", "really big sharp knife",50);
+		Item spear = new Item("spear", "spear, very pointy",25);
 		Item bigmac = new Item("bigmac","blesses by ronald mc.donald",50);
+		Item spaghetti = new Item("Spaghetti bolognese","Italiensk klassiker",100);
+
 
 		room1.addItem(lamp);
+		room1.addItem(segway);
 		room2.addItem(sword);
 		room4.addItem(spear);
 		room2.addItem(bigmac);
+		room1.addItem(spaghetti);
 
 		room1.setEast(room2);
 		room3.setWest(room2);

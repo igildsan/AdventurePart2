@@ -13,29 +13,28 @@ public class Adventure {
         System.out.println("WELCOME TO THE ADVENTURE GAME!\n");
         System.out.println("THIS IS YOUR COMMANDS:");
         System.out.println("--------------------------------");
-        System.out.println("Exit - Exit game\nHelp - Commands list\nLook - Repeats room description \nNorth / Go North / N - Player moves North\nSouth / Go South / S - Player moves South\nEast  / Go East  / E - Player moves East\nWest  / Go West  / W - Player moves West");
+        System.out.println("Exit - Exit game\nHelp - Commands list\nLook -Find items & repeat room description \nNorth / Go North / N - Player moves North\nSouth / Go South / S - Player moves South\nEast  / Go East  / E - Player moves East\nWest  / Go West  / W - Player moves West");
         System.out.println("--------------------------------");
-        System.out.println("\nYou are at a plane. You are about to jump out of the plane.\n");
+        System.out.println("\nYou are in a plane. You are about to jump out of the plane.\n");
 
 
-        boolean playerMoved = false;
         while (true) {
             String input = sc.nextLine();
 
             if (input.equalsIgnoreCase("south") || (input.equalsIgnoreCase("s"))) {
-                playerMoved = player.move("south");
+                player.move("south");
                 System.out.println("You are now " + player.getCurrentRoom());
 
             } else if (input.equalsIgnoreCase("north") || (input.equalsIgnoreCase("n"))) {
-                playerMoved = player.move("north");
+                player.move("north");
                 System.out.println("You are now " + player.getCurrentRoom());
 
             } else if (input.equalsIgnoreCase("west") || (input.equalsIgnoreCase("w"))) {
-                playerMoved = player.move("west");
+                player.move("west");
                 System.out.println("You are now " + player.getCurrentRoom());
 
             } else if (input.equalsIgnoreCase("east") || (input.equalsIgnoreCase("e"))) {
-                playerMoved = player.move("east");
+                player.move("east");
                 System.out.println("You are now " + player.getCurrentRoom());
 
             } else if (input.equalsIgnoreCase("look")) {
@@ -82,6 +81,7 @@ public class Adventure {
                     }
                 }
             }
+
         }
     }
 }

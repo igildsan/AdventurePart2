@@ -2,15 +2,17 @@ import java.util.ArrayList;
 
 public class Player {
 
-	private int playerHealth = 10; // instantiere spillers health points
+	private int playerHealth = 100; // instantiere spillers health points
+	private Room currentRoom;
+	private ArrayList<Item> inventory = new ArrayList<>(); //instantiere array
+	private ArrayList<Item> equiped = new ArrayList<>();
 
+	public ArrayList <Item> getEquiped(){
+		return equiped;
+	}
 	public int getPlayerHealth() {
 		return playerHealth;
 	}
-
-	private Room currentRoom;
-	private ArrayList<Item> inventory = new ArrayList<>(); //instantiere array
-
 	public ArrayList<Item> getInventory() { //player inventory
 		return inventory;
 	}
@@ -59,12 +61,12 @@ public class Player {
 		} else if (direction.equalsIgnoreCase("west")) {
 			requestedRoom = currentRoom.getWest();
 		}
-		if (requestedRoom != null) {
+		if (requestedRoom != null) { // Udskriver hvad retning player går
 			currentRoom = requestedRoom;
 			return true;
 
 		} else {
-			System.out.println("Wrong way");
+			System.out.println("Wrong way"); //Udskriver hvis player tager en retning der er null
 			return false;
 		}
 	}
