@@ -2,16 +2,17 @@ import java.util.ArrayList;
 
 public class Player {
 
-	private int playerHealth = 100; // instantiere spillers health points
 	private Room currentRoom;
+	private int playerHealth = 100; // instantiere spillers health points
 	private ArrayList<Item> inventory = new ArrayList<>(); //instantiere array
-	private ArrayList<Item> equiped = new ArrayList<>();
+	private ArrayList<Item> equipedInventory = new ArrayList<>();
+	private ArrayList<Item> food = new ArrayList<>();
 
-	public ArrayList <Item> getEquiped(){
-		return equiped;
+	public ArrayList <Item> getEquipedInventory(){
+		return equipedInventory;
 	}
-	public int getPlayerHealth() {
-		return playerHealth;
+	public ArrayList<Item> food() {
+		return food;
 	}
 	public ArrayList<Item> getInventory() { //player inventory
 		return inventory;
@@ -29,7 +30,7 @@ public class Player {
 	}
 	public Player() {
 	}
-	public boolean takeItem(String itemName){ // Søger efter item i rum, giver det tikl player og sletter det fra rummet.
+	public boolean takeItem(String itemName){ // Søger efter item i rum, giver det til player og sletter det fra rummet.
 		Item item = currentRoom.findItem(itemName);
 		inventory.add(item);
 		currentRoom.getRoomInventory().remove(item);
@@ -47,6 +48,17 @@ public class Player {
 		Item item = findIventoryItem(itemName);
 		inventory.remove(item);
 		currentRoom.getRoomInventory().add(item);
+		return true;
+	}
+	public boolean equipItem(String itemName) { //Kigger i player inventory og fjerner item derfra.
+		Item item = findIventoryItem(itemName);
+		inventory.remove(item);
+		getInventory().add(item);
+		return true;
+	}
+	public boolean eat (String itemName) { //Kigger i player inventory og fjerner item derfra.
+		Item item = findIventoryItem(itemName);
+		inventory.remove(item);
 		return true;
 	}
 

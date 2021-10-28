@@ -9,7 +9,6 @@ public class Adventure {
         Player player = new Player();
         player.setCurrentRoom(map.getStarterRoom());
 
-        Scanner sc = new Scanner(System.in);
         System.out.println("WELCOME TO THE ADVENTURE GAME!\n");
         System.out.println("THIS IS YOUR COMMANDS:");
         System.out.println("--------------------------------");
@@ -19,6 +18,7 @@ public class Adventure {
 
 
         while (true) {
+           Scanner sc = new Scanner(System.in);
             String input = sc.nextLine();
 
             if (input.equalsIgnoreCase("south") || (input.equalsIgnoreCase("s"))) {
@@ -81,7 +81,30 @@ public class Adventure {
                     }
                 }
             }
-
+            else if (input.equalsIgnoreCase("equip")) {
+                player.playerinventoryList();
+                System.out.println("What item do you want to equip?");
+                Scanner inputSc = new Scanner(System.in);
+                String itemEquip = inputSc.nextLine();
+                if (player.equipItem(itemEquip)) {
+                    System.out.println("item equiped");
+                    for (int i = 0; i < player.getEquipedInventory().size(); i++) {
+                        System.out.println(player.getEquipedInventory().get(i).getItemName());
+                    }
+                }
+            }
+            else if (input.equalsIgnoreCase("eat")) {
+                player.playerinventoryList();
+                System.out.println("What item do you want to eat?");
+                Scanner scInput = new Scanner(System.in);
+                String itemEquip = scInput.nextLine();
+                if (player.eat(itemEquip)) {
+                    System.out.println("You not hangry anymore");
+                    for (int i = 0; i < player.food().size(); i++) {
+                        System.out.println(player.food().get(i).getItemName());
+                    }
+                }
+            }
         }
     }
 }
