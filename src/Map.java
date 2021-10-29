@@ -17,10 +17,10 @@ public class Map {
 
 		Item lamp = new Item("lamp", "magical and bright");
 		Item segway = new Item("segway", "pretty fast, vroom vroom");
-		Item sword = new Item("sword", "really big sharp knife",50);
-		Item spear = new Item("spear", "spear, very pointy",25);
-		Item bigmac = new Item("bigmac","blesses by ronald mc.donald",50);
-		Item spaghetti = new Item("Spaghetti bolognese","Italiensk klassiker",100);
+		Weapon sword = new Weapon("sword", "really big sharp knife",50);
+		Weapon spear = new Weapon("spear", "spear, very pointy",25);
+		Food bigmac = new Food("bigmac","blesses by ronald mc.donald",50);
+		Food spaghetti = new Food("Spaghetti bolognese","Italiensk klassiker",100);
 
 
 		room1.addItem(lamp);

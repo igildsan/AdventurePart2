@@ -50,11 +50,19 @@ public class Player {
 		currentRoom.getRoomInventory().add(item);
 		return true;
 	}
-	public boolean equipItem(String itemName) { //Kigger i player inventory og fjerner item derfra.
-		Item item = findIventoryItem(itemName);
+	public boolean equipItem(String Weapon) { //Kigger i player inventory og fjerner item derfra.
+		Weapon item = findWeapon(Weapon);
 		inventory.remove(item);
 		getInventory().add(item);
 		return true;
+	}
+	public Weapon findWeapon(String weaponName) { // looper igennem player inventory, for at tjekke hvad der er i den.
+		for (int i = 0; i < inventory.size(); i++) {
+			if (inventory.get(i).getItemName().equals(weaponName)) {
+				return (Weapon) inventory.get(i);
+			}
+		}
+		return null;
 	}
 	public boolean eat (String itemName) { //Kigger i player inventory og fjerner item derfra.
 		Item item = findIventoryItem(itemName);
