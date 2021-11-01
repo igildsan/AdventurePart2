@@ -1,7 +1,8 @@
 
 public class Item {
-	private String itemName;
-	private String description;
+
+	protected String itemName;
+	protected String description;
 
 	public Item(String aItemName, String aDescription) { // item constructor
 		this.itemName = aItemName;

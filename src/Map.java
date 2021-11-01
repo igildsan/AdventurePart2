@@ -15,24 +15,27 @@ public class Map {
 		Room room8 = new Room("walking down the street.","People are yelling at you, but you dont care." );
 		Room room9 = new Room("at Storke springvandet.","Your washing the blood of your clothes, unfortunately you hit a family on the way down. ");
 
-		Item lamp = new Item("Ford Mustang", "gain 999 street credit");
+		Item ford = new Item("Ford Mustang", "gain 999 street credit");
 		Item segway = new Item("segway", "pretty fast, vroom vroom");
-		Weapon sword = new Weapon("sword", "really big sharp knife",50);
-		Weapon spear = new Weapon("spear", "spear, very pointy",25);
-		Weapon avis = new Weapon("avis", "look out, really hurts", 12);
-		Food bigmac = new Food("bigmac","blesses by ronald mc.donald",50);
-		Food spaghetti = new Food("Spaghetti bolognese","Italiensk klassiker",100);
 
-		Enemy husForbi = new Enemy("hus forbi sælger","Buy a news paper or die",100);
+		Weapon belt = new Weapon("Belt", "Even your dad would be scared",50);
+		Weapon sutsko = new Weapon("sutsko", "impossible to outrun",25);
+		Weapon avis = new Weapon("news paper", "look out, really hurts", 12);
+
+		Food bigmac = new Food("bigmac","blesses by ronald mc.donald",50);
+		Food redbull = new Food("redbull","give you wings",-60);
+		Food spaghetti = new Food("spaghetti","His palms are sweaty, knees weak, arms are heavy\nThere's vomit on his sweater already, mom's spaghetti",45);
+
+		Enemy husForbi = new Enemy("hus forbi homeless guy","Buy a news paper or die",100);
 
 		room1.addEnemy(husForbi);
 
 		room1.addEnemyInventory(avis);
 
-		room1.addItem(lamp);
+		room1.addItem(ford);
 		room1.addItem(segway);
-		room2.addItem(sword);
-		room4.addItem(spear);
+		room2.addItem(belt);
+		room4.addItem(sutsko);
 		room2.addItem(bigmac);
 		room1.addItem(spaghetti);
 
@@ -59,4 +62,5 @@ public class Map {
 	public Room getWinnerRoom() {
 		return winnerRoom;
 	}
+
 }

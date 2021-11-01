@@ -6,9 +6,19 @@ public class Enemy {
     private String enemyDescription;
     private int enemyHp;
 
+
     public Enemy(String anEnemyName, String anEnemyDescription,int anEnemyHp) { // item constructor
         this.enemyName = anEnemyName;
         this.enemyDescription = anEnemyDescription;
         this.enemyHp = anEnemyHp;
     }
+
+    public int getEnemyHp() {
+        return enemyHp ;
+    }
+
+    public String getEnemyName() {
+        return enemyName;
+    }
+
 }

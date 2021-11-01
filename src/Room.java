@@ -22,6 +22,10 @@ public class Room {
 		enemyInventory.add(item);
 	}
 
+	public ArrayList<Weapon> getEnemyInventory() {
+		return enemyInventory;
+	}
+
 	public void addEnemy (Enemy enemy){
 		roomEnemyInventory.add(enemy);
 	}
@@ -40,6 +44,12 @@ public class Room {
 	public void roomInventoryList(){
 		for (int i = 0; i< roomInventory.size(); i++){
 			System.out.println(roomInventory.get(i).getItemName());
+		}
+
+	}
+	public void enemyRoomList(){
+		for (int i = 0; i< roomEnemyInventory.size(); i++){
+			System.out.println(roomEnemyInventory.get(i).getEnemyName());
 		}
 
 	}

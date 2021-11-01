@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Player {
 
@@ -6,6 +7,60 @@ public class Player {
 	private ArrayList<Item> inventory = new ArrayList<>(); //instantiere array
 	private ArrayList<Item> equipedInventory = new ArrayList<>();
 	private ArrayList<Item> food = new ArrayList<>();
+	private Scanner user = new Scanner(System.in);
+
+	private String playerName;
+	private String playerDescription;
+	private int health = 100;
+	private int maxHealth = 100;
+
+	public Player(String aPlayerName, String aPlayerDescription) { // item constructor
+		this.playerName = aPlayerName;
+		this.playerDescription = aPlayerDescription;
+	}
+
+	public int getHealth() {
+		return health;
+	}
+
+	public void setHealth(int health) {
+
+		if (health >= 100) {
+			this.health = maxHealth;
+		} else {
+			this.health = health;
+		}
+		if (this.health <= 100 && this.health > 80) {
+			System.out.println("You are in great health");
+		} else if (this.health <= 80 && this.health > 50) {
+			System.out.println("You are in pretty decent health");
+		} else if (this.health <= 50 && this.health > 30) {
+			System.out.println("You are in poor health");
+		} else if (this.health <= 30 && this.health > 10) {
+			System.out.println("You are in critical health");
+		} else {
+			System.out.println("You are dying");
+		}
+
+	}
+
+	public void adjustHealth(int changeHealth) {
+		setHealth(getHealth() + changeHealth);
+	}
+
+	public void eat() {
+		System.out.println("What would you like to eat?");
+		String input = user.nextLine();
+		for (int i = 0; i < getInventory().size(); i++) {
+			if (input.equalsIgnoreCase((getInventory().get(i)).getItemName())) {
+				System.out.println("You have eaten " + input);
+				Food food = (Food) getInventory().get(i);
+				adjustHealth(food.getHealthBack());
+				eatItem(input);
+			}
+
+		}
+	}
 
 	public Player() {
 	}
@@ -50,6 +105,11 @@ public class Player {
 		currentRoom.getRoomInventory().add(item);
 		return true;
 	}
+	public boolean eatItem(String itemName) { //Kigger i player inventory og fjerner item derfra.
+		Item item = findIventoryItem(itemName);
+		inventory.remove(item);
+		return true;
+	}
 	public boolean equipItem(String Weapon) { //Kigger i player inventory og fjerner item derfra.
 		Weapon item = findWeapon(Weapon);
 		inventory.remove(item);
@@ -63,11 +123,6 @@ public class Player {
 			}
 		}
 		return null;
-	}
-	public boolean eat (String itemName) { //Kigger i player inventory og fjerner item derfra.
-		Item item = findIventoryItem(itemName);
-		inventory.remove(item);
-		return true;
 	}
 
 	public boolean move(String direction) { // gør så player kan flytte sig i kompassets retninger

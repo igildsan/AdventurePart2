@@ -6,13 +6,13 @@ public class Adventure {
         Map map = new Map();
         map.createMap();
 
-        Player player = new Player();
+        Player player = new Player("hero","hard hitter");
         player.setCurrentRoom(map.getStarterRoom());
 
         System.out.println("WELCOME TO THE ADVENTURE GAME!\n");
         System.out.println("THIS IS YOUR COMMANDS:");
         System.out.println("--------------------------------");
-        System.out.println("Exit - Exit game\nHelp - Commands list\nLook -Find items & repeat room description \nNorth / Go North / N - Player moves North\nSouth / Go South / S - Player moves South\nEast  / Go East  / E - Player moves East\nWest  / Go West  / W - Player moves West");
+        System.out.println("Exit - Exit game\nHelp - Commands list\nLook - Find items & repeat room description \nNorth / Go North / N - Player moves North\nSouth / Go South / S - Player moves South\nEast  / Go East  / E - Player moves East\nWest  / Go West  / W - Player moves West");
         System.out.println("--------------------------------");
         System.out.println("\nYou are in a plane. You are about to jump out of the plane.\n");
 
@@ -40,6 +40,7 @@ public class Adventure {
             } else if (input.equalsIgnoreCase("look")) {
                 System.out.println("You are " + player.getCurrentRoom());
                 player.getCurrentRoom().roomInventoryList();
+                player.getCurrentRoom().enemyRoomList();
 
             } if (player.getCurrentRoom() == map.getWinnerRoom()) {
                 System.out.println("You Won!");
@@ -93,17 +94,20 @@ public class Adventure {
                     }
                 }
             }
-            else if (input.equalsIgnoreCase("eat")) {
+            /*else if (input.equalsIgnoreCase("eat")) {
                 player.playerinventoryList();
                 System.out.println("What item do you want to eat?");
                 Scanner scInput = new Scanner(System.in);
-                String itemEquip = scInput.nextLine();
-                if (player.eat(itemEquip)) {
-                    System.out.println("You not hangry anymore");
+                String itemEat = scInput.nextLine();
+                if (player.eat(itemEat)) {
                     for (int i = 0; i < player.food().size(); i++) {
                         System.out.println(player.food().get(i).getItemName());
                     }
                 }
+            }        */
+            else if (input.equalsIgnoreCase("eat")){
+                player.eat();
+                System.out.println("Health: " + player.getHealth());
             }
         }
     }
