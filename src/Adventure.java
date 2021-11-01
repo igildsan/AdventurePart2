@@ -94,17 +94,6 @@ public class Adventure {
                     }
                 }
             }
-            /*else if (input.equalsIgnoreCase("eat")) {
-                player.playerinventoryList();
-                System.out.println("What item do you want to eat?");
-                Scanner scInput = new Scanner(System.in);
-                String itemEat = scInput.nextLine();
-                if (player.eat(itemEat)) {
-                    for (int i = 0; i < player.food().size(); i++) {
-                        System.out.println(player.food().get(i).getItemName());
-                    }
-                }
-            }        */
             else if (input.equalsIgnoreCase("eat")){
                 player.eat();
                 System.out.println("Health: " + player.getHealth());

@@ -1,4 +1,4 @@
-public class Weapon extends Item {
+public class Weapon extends Item { //melee våben som
 
     private int attack;
 
