@@ -3,11 +3,12 @@ import java.util.ArrayList;
 public class Player {
 
 	private Room currentRoom;
-	private int playerHealth = 100; // instantiere spillers health points
 	private ArrayList<Item> inventory = new ArrayList<>(); //instantiere array
 	private ArrayList<Item> equipedInventory = new ArrayList<>();
 	private ArrayList<Item> food = new ArrayList<>();
 
+	public Player() {
+	}
 	public ArrayList <Item> getEquipedInventory(){
 		return equipedInventory;
 	}
@@ -28,8 +29,7 @@ public class Player {
 			System.out.println(inventory.get(i).getItemName());
 		}
 	}
-	public Player() {
-	}
+
 	public boolean takeItem(String itemName){ // Søger efter item i rum, giver det til player og sletter det fra rummet.
 		Item item = currentRoom.findItem(itemName);
 		inventory.add(item);

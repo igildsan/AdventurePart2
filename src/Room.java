@@ -10,11 +10,22 @@ public class Room {
 	private String name;
 	private String description;
 
+	private ArrayList<Weapon> enemyInventory = new ArrayList<>(); //instantiere array
 	private ArrayList<Item> roomInventory = new ArrayList<>();
+	private ArrayList<Enemy> roomEnemyInventory = new ArrayList<>();
 
 	public void addItem (Item item){
 		roomInventory.add(item);
 	}
+
+	public void addEnemyInventory (Weapon item){
+		enemyInventory.add(item);
+	}
+
+	public void addEnemy (Enemy enemy){
+		roomEnemyInventory.add(enemy);
+	}
+
 	public ArrayList<Item> getRoomInventory() {
 		return roomInventory;
 	}

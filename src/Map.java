@@ -15,13 +15,19 @@ public class Map {
 		Room room8 = new Room("walking down the street.","People are yelling at you, but you dont care." );
 		Room room9 = new Room("at Storke springvandet.","Your washing the blood of your clothes, unfortunately you hit a family on the way down. ");
 
-		Item lamp = new Item("lamp", "magical and bright");
+		Item lamp = new Item("Ford Mustang", "gain 999 street credit");
 		Item segway = new Item("segway", "pretty fast, vroom vroom");
 		Weapon sword = new Weapon("sword", "really big sharp knife",50);
 		Weapon spear = new Weapon("spear", "spear, very pointy",25);
+		Weapon avis = new Weapon("avis", "look out, really hurts", 12);
 		Food bigmac = new Food("bigmac","blesses by ronald mc.donald",50);
 		Food spaghetti = new Food("Spaghetti bolognese","Italiensk klassiker",100);
 
+		Enemy husForbi = new Enemy("hus forbi sælger","Buy a news paper or die",100);
+
+		room1.addEnemy(husForbi);
+
+		room1.addEnemyInventory(avis);
 
 		room1.addItem(lamp);
 		room1.addItem(segway);
